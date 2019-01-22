@@ -1,0 +1,485 @@
+@import "fonts"
+@import "libs"
+@import "base"
+@import "vars"
+
+
+.container
+	margin: 0 auto
+	width: 1152px
+	padding: 16px
+.header
+	position: fixed
+	width: 100%
+	margin-top: 35px
+	z-index: 100
+.top-line
+	display: flex
+	justify-content: space-between
+	&__logo
+		max-width: 256px
+	&__logo-img
+	&__logo-text
+		font-size: 9px
+		font-family: 'Montserrat', serif
+		color: #ffffff
+		text-transform: uppercase
+		letter-spacing: 0.3em
+	&__nav
+		display: flex
+		align-items: center
+	&__nav-item
+		display: inline-block
+		margin-right: 26px
+		border-bottom: 1px solid transparent
+		font-size: 16px
+		color: #fffeff
+		text-transform: uppercase
+		text-decoration: none
+		letter-spacing: 0.025em
+		transition: all 0.2s ease
+		&--active, &:hover
+			border-bottom: 1px solid #636364
+			color: #ffffff
+	&__contacts
+	&__contacts-item
+		&::before
+			content: ""
+			display: inline
+			color: #a5a4a5
+			font-size: 14px
+			font-weight: 900
+			font-family: 'Font Awesome 5 Free'
+		&--phone
+			&::before
+				content: " "
+		&--email
+			&::before
+				content: " "
+	&__contacts-link
+		font-size: 18px
+		color: #c9a56e
+		transition: all 0.2 ease
+		text-decoration: none
+		transition: 0.1s all ease
+		&--email
+			border-bottom: 1px dotted #c9a56e
+		&:hover
+			color: #ffffff
+			border-bottom-color: #8d8c8b
+	&__social
+		display: flex
+		align-items: center	
+		&-item
+			display: inline-block
+			margin: 0 4px
+			&::before
+				content: ''
+				display: inline-block
+				color: #a5a4a5
+				font-size: 18px
+				font-family: 'Font Awesome 5 Brands'
+				transition: 0.1s all ease
+			&:hover
+				&::before
+					color: #ffffff
+			&--fb
+				&::before
+					content: ''
+			&--vk
+				&::before
+					content: ''
+			&--ig
+				&::before
+					content: ''
+	&__lang
+		display: flex
+		position: relative
+		align-items: center
+		font-size: 18px
+		color: #ffffff
+		line-height: 18px
+		svg
+		 position: relative
+		 z-index: 1
+		&-current
+			position: absolute
+			top: calc(50% - 9px)
+			left: calc(50% - 15px)
+			// border-color: rgba(255, 255, 255, 0.502)
+			// border-width: 1px
+			// border-bottom-style: solid
+			// border-top-style: solid
+			display: flex
+			z-index: 3
+			&::after
+				content: ''
+				display: inline-block
+				position: relative
+				top: 6px
+				left: 5px
+				width: 0
+				height: 0
+				border-top: 6px solid #bea370
+				border-left: 3px solid transparent
+				border-right: 3px solid transparent
+		&-hidden
+			position: absolute
+			top: 85%
+			visibility: hidden
+			transition: 0.2s all ease
+			&-next
+				position: absolute
+				top: calc(50% - 9px)
+				left: calc(50% - 15px)
+		&:hover
+			.top-line__lang-hidden
+				visibility: visible
+.first-screen
+	height: 990px
+	background: transparent url('../img/bg-first-without-balls.jpg') no-repeat 50%
+	background-size: cover
+	position: relative
+
+.first
+	display: flex
+	&__free-space
+		flex: 8
+	&__content
+		flex: 11
+		margin-top: 32.5%
+		&-heading
+			position: relative
+			color: #bfa371
+			font-size: 62px
+			line-height: 62px
+			margin-bottom: 10%
+			span
+				color: #ffffff
+		&-intro
+			position: relative
+			margin-top: 18%
+			color: #bfa371
+			font-size: 24px
+			&-prof
+				color: #ffffff
+				font-size: 12px
+				line-height: 16px
+			&-point
+				position: absolute
+				left: -60px
+				width: 54px
+				height: 54px
+				border-style: solid
+				border-width: 1px
+				border-color: rgb(128, 107, 82)
+				border-radius: 50%
+				background-color: rgba(128, 107, 82, 0.102)
+				opacity: 0.2
+				z-index: 8
+				&::before
+					content: ''
+					display: block
+					position: absolute
+					top: calc(50% - 17px)
+					left: calc(50% - 17px)
+					border-style: solid
+					border-width: 1px
+					border-color: rgb(128, 107, 82)
+					border-radius: 50%
+					background-color: rgba(128, 107, 82, 0.302)
+					opacity: 0.4
+					width: 34px
+					height: 34px
+					z-index: 9
+				&::after
+					content: ''
+					display: block
+					position: absolute
+					top: calc(50% - 8px)
+					left: calc(50% - 8px)
+					border-radius: 50%
+					background-color: rgb(128, 107, 82)
+					position: absolute
+					width: 16px
+					height: 16px
+					z-index: 10
+.squares
+	border-left-width: 0.25px
+	border-left-color: rgba(255, 255, 255, 0.122)
+	border-left-style: solid
+	position: absolute
+	width: 1298px
+	height: 1298px
+	top: calc(50% - 649px)
+	left: calc(50% - 649px)
+	transform-origin: 50% 50%
+	transform: rotate(45deg)
+	z-index: 0
+	&::before
+		content: ''
+		display: block
+		border-width: 0.25px
+		border-color: rgba(255, 255, 255, 0.122)
+		border-style: solid
+		position: absolute
+		width: 410px
+		height: 410px
+		top: calc(50% - 180px)
+		left: calc(50% - 215px)
+	&::after
+		content: ''
+		display: block
+		border-width: 0.25px
+		border-color: rgba(255, 255, 255, 0.122)
+		border-style: solid
+		position: absolute
+		width: 910px
+		height: 910px
+		top: calc(50% - 455px)
+		left: calc(50% - 455px)	
+.heading
+	position: relative
+	z-index: 10
+	text-align: center
+	color: #bea370
+	font-size: 70px
+	font-weight: 500
+	font-style: italic
+	line-height: 68px
+	span
+		color: #fff
+		font-style: normal
+.clients
+	&__wrap
+		display: flex
+
+		padding-top: 68px
+	&__list
+		flex: 3
+		ul
+			margin: 0
+			padding: 0
+		&-item
+			height: 90px
+			list-style: none
+			padding-left: 24px
+			text-transform: uppercase
+			font-size: 18px
+			line-height: 90px
+			color: #9a9a9a
+			letter-spacing: 0.185em
+			border-width: 1px
+			border-style: solid
+			border-color: rgba(255, 255, 255, 0.122)
+			border-left: none
+			border-right: none
+			border-bottom: none
+			transition: 0.2s all ease
+			cursor: pointer
+			&--active, &:hover
+				border-color: transparent
+				background-image: -moz-linear-gradient(0deg, rgba(255,255,255, 0.1) 0%, rgba(255,255,255, 0) 100%)
+				background-image: -webkit-linear-gradient(0deg, rgba(255,255,255, 0.1) 0%, rgba(255,255,255, 0) 100%)
+				background-image: -ms-linear-gradient(0deg, rgba(255,255,255, 0.1) 0%, rgba(255,255,255, 0) 100%)
+				& + li
+					border-color: transparent
+
+
+	&__slider
+		flex: 10
+		position: relative
+	&__slide
+		height: 0px
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 10
+		input
+			display: none
+		&-item
+			display: flex
+			opacity: 0
+			visibility: hidden
+			position: relative
+			transition: 1s all ease
+			overflow: hidden
+			z-index: 10
+		input:checked ~ .clients__slide-item
+			width: 100%
+			opacity: 1
+			z-index: 100 
+			visibility: visible
+.my-slick
+	&__controls
+		flex: 1 25px
+	&__items
+		flex: 7
+		max-width: 736px
+		.slick-slide
+			height: 100%
+		.slick-arrow
+			width: 52px
+			height: 52px
+			border: 1px solid rgba(255,255,255, 0.122)
+			background-color: transparent
+			transform: rotate(45deg)
+			left: -70px
+			&::before
+				display: block
+				transform: rotate(-45deg)
+				position: relative
+				top: 5px
+				left: 5px
+				font-family: 'Font Awesome 5 Free'
+				font-weight: 900
+
+			&::after
+				content: ''
+				display: block
+				position: absolute
+				top: 8px
+				left: 8px
+				width: 103%
+				height: 103%
+				border: 1px solid rgba(255,255,255, 0.122)
+
+
+		.slick-next
+			content: ''
+			top: 10px
+			&::before
+				content: ''
+			&::after
+		.slick-prev
+			content: ''
+			top: 100px
+			&::before
+				content: ''
+			&::after
+	&__item
+		max-width: 95%
+		&:not(:last-child)
+			//margin-right: 32px
+.client-card
+	position: relative
+	width: 100%
+	&::before
+		content: ''
+		display: block
+		padding-top: 129%
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+		filter: grayscale(100%)
+	&__data
+		position: absolute
+		bottom: 0
+		width: 100%
+		padding: 0 32px 39px
+		background-image: -moz-linear-gradient(90deg, rgba(39,37,36, 1.0) 50%, rgba(39,37,36, 0.5) 80%, rgba(39,37,36, 0) 100%)
+		background-image: -webkit-linear-gradient(90deg, rgba(39,37,36, 1.0) 50%, rgba(39,37,36, 0.5) 80%, rgba(39,37,36, 0) 100%)
+		background-image: -ms-linear-gradient(90deg, rgba(39,37,36, 1.0) 50%, rgba(39,37,36, 0.5) 80%, rgba(39,37,36, 0) 100%)
+
+
+
+	&__data-name
+		font-size: 32px
+
+	&__table-char
+		margin:  0 0 26px
+		font-size: 12px
+		font-family: 'Montserrat', serif
+		line-height: 20px
+		letter-spacing: 0.02em
+		td:last-child
+			padding: 0 0 0 10px
+			color: #bea370
+
+.why-me
+	padding-top: 90px
+	&__flex-wrap
+		display: flex
+		margin: 64px 0 82px
+		padding: 60px 76px 100px
+		border: 1px solid #d9bc7e
+		position: relative
+	&__free-space
+		flex: 2
+		&::before
+			content: ''
+			position: absolute
+			display: block
+			border-width: 0.25px
+			border-color: rgba(255, 255, 255, 0.122)
+			border-style: solid
+			position: absolute
+			width: 352px
+			height: 352px
+			transform: rotate(45deg) translatex(-53px) translatey(42px)
+		&::after
+			content: ''
+			position: absolute
+			display: block
+			border-width: 0.25px
+			border-color: rgba(255, 255, 255, 0.122)
+			border-style: solid
+			position: absolute
+			width: 352px
+			height: 352px
+			transform: rotate(45deg) translatex(-86px) translatey(10px)
+	&__img
+		position: absolute
+		top: -250px
+		left: -100px
+		z-index: 30
+	&__content
+		flex: 3
+	&__hello
+		font-size: 24px
+		line-height: 76px
+		font-weight: 500
+		font-style: italic
+		color: #bfa371
+	&__text
+		font-size: 14px
+		font-family: 'Montserrat', sans-serif
+		line-height: 24px
+		letter-spacing: 0.025em
+		margin-bottom: 68px
+			
+
+
+
+
+
+.btn
+	position: relative
+	display: block
+	width: max-content
+	min-width: 272px
+	text-align: center
+	text-decoration: none
+	padding: 15px 16px
+	font-size: 18px
+	color: #000
+	text-transform: uppercase
+	box-shadow: 0px 1px #5a4730
+	border-radius: 5px
+	letter-spacing: 0.185em
+	background-image: -moz-linear-gradient( 70deg, rgb(128,107,82) 0%, rgb(217,188,126) 60%)
+	background-image: -webkit-linear-gradient( 70deg, rgb(128,107,82) 0%, rgb(217,188,126) 60%)
+	background-image: -ms-linear-gradient( 70deg, rgb(128,107,82) 0%, rgb(217,188,126) 60%)
+	z-index: 10
+	&--centerd
+		margin: 0 auto
+
+// Пользовательские стили
+body
+@import "media" // Всегда в конце
